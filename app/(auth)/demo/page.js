@@ -15,7 +15,11 @@ export default function OfflineBanner() {
     };
   }, []);
 
-  return offline ? (
-    <div className="bg-yellow-300 text-center p-2">⚠️ You are offline</div>
-  ) : null;
+  if (!offline) return null;
+
+  return (
+    <div className="bg-yellow-300 text-center p-2">
+      ⚠️ You are offline — Header & Footer still available
+    </div>
+  );
 }
